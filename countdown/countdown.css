@@ -1,0 +1,192 @@
+@font-face {
+  font-family: 'MontserratAlt1';
+  src: url('fonts/MontserratAlt1-Black.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('fonts/comfortaa.ttf') format('truetype');
+}
+
+/* 12.8px is the base number for em and rem (80% of 16px) */
+
+html {
+  scroll-behavior: smooth;
+  overflow: hidden !important;
+  font-size: 80%;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: 'Comfortaa', cursive;
+  overflow: hidden;
+  white-space: nowrap;
+  background-image: linear-gradient(rgba(150, 115, 80, .7),rgba(150, 115, 80, .7)),url(bg.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden !important;
+}
+
+body::before {
+  content: '';
+  background: inherit;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 120vw;
+  height: 120vh;
+  filter: blur(7px);
+  margin: -20px;
+  overflow: hidden;
+}
+
+.newyear-container {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: .7s ease;
+}
+
+#newyear {
+  font-family: "MontserratAlt1", sans-serif;
+  font-size: 10.5em;
+  font-weight: bolder;
+  margin: 0;
+  color: #020403;
+  opacity: 0;
+  transition: .7s ease-in;
+}
+
+#clock {
+  display: flex;
+  column-gap: 50px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 93.75rem;
+  max-height: 15.625rem;
+}
+
+#clock span {
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 6.25em;
+  color: #fffff6;
+  padding: 3.9rem;
+  width: 15.625rem;
+  height: 15.625rem;
+  background: transparent;
+  border-radius: 2.34rem;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.17);
+}
+
+@media screen and (min-width: 1920px) and (orientation: landscape) {
+  html {
+    font-size: 100%;
+  }
+}
+
+@media screen and (min-height: 1920px) and (orientation: portrait) {
+  html {
+    font-size: 100%;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1200px), (max-height: 720px) {
+  html {
+    font-size: 50%;
+  }
+  #newyear {
+    position: relative;
+    top: -4rem;
+    font-size: 13.5em;
+  }
+}
+
+@media screen and (max-width: 720px) and (orientation: landscape) {
+  html {
+    font-size: 30%;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 640px) {
+  #clock {
+    top: 45%;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 481px) {
+  #clock {
+    top: 25rem;
+  }
+}
+
+@media screen and (max-width: 360px) and (orientation: landscape) {
+  html {
+    font-size: 15%;
+  }
+  #newyear {
+    font-size: 12em;
+  }
+  #clock {
+    top: 50%;
+    column-gap: 10rem;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  html {
+    font-size: 50%;
+  }
+  #newyear {
+    position: relative;
+    top: -4rem;
+    font-size: 4em;
+  }
+  #clock {
+    flex-direction: column !important;
+    row-gap: 5rem;
+    max-width: fit-content;
+    min-height: 84.5rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-height: 720px) {
+  html {
+    font-size: 30%;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-height: 480px) {
+  html {
+    font-size: 15%;
+  }
+  #newyear {
+    font-size: 12em;
+  }
+  #clock {
+    min-height: 80rem;
+  }
+}
