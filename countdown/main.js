@@ -64,6 +64,6 @@ window.onload = function(){
 		return new Date(str);
 	}
 
-	var deadline = test();
+	var deadline = newYear();
 	startTimer("clock", deadline); 
 }
